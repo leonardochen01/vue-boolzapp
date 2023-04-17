@@ -1,6 +1,6 @@
 const { createApp } = Vue;
 
-createApp({
+const app = createApp({
   data(){
     return{
 
@@ -39,7 +39,6 @@ createApp({
           profile: 'img/avatar_8.jpg'
         }
       ]
-
     }
   }
 }).mount('#app')

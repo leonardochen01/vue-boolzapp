@@ -69,9 +69,12 @@
 
       <div class="menu d-f">
 
-        <div>AAAAAAA</div>
+          <div v-for="(contact, index) in contacts" class="talking-user d-f">
+            <img :src="contact.profile" v-if="index === 0">
+            <span v-if="index === 0">{{ contact.user }}</span>
+          </div>
 
-        <div class="right-icons">
+        <div class="right-icons d-f">
           <i class="fa-solid fa-magnifying-glass grey"></i>
           <i class="fa-solid fa-paperclip grey"></i>
           <i class="fa-solid fa-ellipsis-vertical grey"></i>
@@ -81,7 +84,17 @@
 
       <div class="container-text"></div>
 
-      <div class="container-write"></div>
+      <div class="container-write d-f">
+        <div class="emote d-f">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+        <div class="write d-f">
+          <input type="text" id="message-write" placeholder="Scrivi un messaggio">
+        </div>
+        <div class="mic d-f">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
 
     </div> <!--fine div rightsidebar-->
 

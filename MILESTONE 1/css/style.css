@@ -16,7 +16,6 @@ body{
 
 i:hover{
   cursor: pointer;
-  filter: brightness(2);
 }
 
 /*UTILITIES*/
@@ -32,27 +31,26 @@ i:hover{
 /*CSS*/
 
 #app{
-  background-color: beige;
+  background-color: rgb(234, 234, 234);
   width: 80vw;
   height: 90vh;
 }
 
 .left-sidebar{
-  background-color: cadetblue;
   width: 40%;
   height: 100%;
 }
 
 .toolsbar{
-  background-color: blueviolet;
   width: 100%;
   height: 25%;
 }
 
 .main-user{
-  background-color: chartreuse;
+  background-color: rgb(219, 217, 217);
   height: 40%;
   justify-content: space-between;
+  border-right: 1px solid rgb(204, 199, 199);
 }
 
 .main-user div{
@@ -108,7 +106,6 @@ i:hover{
 }
 
 .search{
-  background-color: brown;
   height: 20%;
   justify-content: center;
   align-items: center;
@@ -126,7 +123,7 @@ i:hover{
 
 .contact{
   align-items: center;
-  border-top: 1px solid gray;
+  border-top: 1px solid rgb(204, 199, 199);
   padding: 10px 0;
   position: relative;
 }
@@ -158,21 +155,36 @@ i:hover{
 /*RIGHT SIDEBAR*/
 
 .right-sidebar{
-  background-color: coral;
   width: 60%;
   height: 100%;
 }
 
 .menu{
-  background-color: cornflowerblue;
+  background-color: rgb(219, 217, 217);
   width: 100%;
   height: 10%;
   justify-content: space-between;
   align-items: center;
 }
 
+.talking-user{
+  height: 100%;
+  align-items: center;
+}
+
+.talking-user img{
+  height: 80%;
+  border-radius: 50%;
+}
+
+.talking-user span{
+  font-weight: bold;
+  padding-left: 10px;
+}
+
 .right-icons{
   padding-right: 20px;
+  gap: 20px;
 }
 
 .right-icons i{
@@ -180,13 +192,44 @@ i:hover{
 }
 
 .container-text{
-  background-color: darkcyan; /*PROBLEMA QUI*/
+  background-image: url('../img/mine.jpg');
   width: 100%;
   height: 80%;
+  overflow-y: scroll;
 }
 
 .container-write{
-  background-color: darkgray;
+  background-color: rgb(219, 217, 217);
   width: 100%;
   height: 10%;
+}
+
+.emote{
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.write{
+  width: 80%;
+}
+
+.mic{
+  width: 10%;
+  justify-content: center;
+  align-items: center;
+}
+
+.emote i, .mic i{
+  font-size: 30px;
+  color: rgb(107, 115, 118);
+}
+
+#message-write{
+  width: 100%;
+  height: 80%;
+  align-self: center;
+  border-radius: 8px;
+  padding-left: 20px;
+  border-style: none;
 }
