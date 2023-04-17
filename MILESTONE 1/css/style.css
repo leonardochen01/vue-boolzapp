@@ -155,17 +155,38 @@ i:hover{
   right: 20px;
 }
 
-
-
-
-
-
-
-
-
+/*RIGHT SIDEBAR*/
 
 .right-sidebar{
   background-color: coral;
   width: 60%;
   height: 100%;
+}
+
+.menu{
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-icons{
+  padding-right: 20px;
+}
+
+.right-icons i{
+  font-size: 25px;
+}
+
+.container-text{
+  background-color: darkcyan; /*PROBLEMA QUI*/
+  width: 100%;
+  height: 80%;
+}
+
+.container-write{
+  background-color: darkgray;
+  width: 100%;
+  height: 10%;
 }
