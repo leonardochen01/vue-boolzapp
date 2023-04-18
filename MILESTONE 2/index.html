@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Boolzap</title>
+</head>
+<body class="d-f">
+  
+  <div id="app" class="d-f">
+
+    <div class="left-sidebar">
+
+      <div class="toolsbar"> <!--div che contiene profilo utente, pannello notifiche e barra ricerca-->
+
+        <div class="main-user d-f">
+          <div class="d-f">
+            <img src="img/avatar_io.jpg">
+            <span>Sofia</span>
+          </div>
+          <div class="left-icons d-f">
+            <i class="fa-sharp fa-solid fa-circle-notch grey"></i>
+            <i class="fa-solid fa-message grey"></i>
+            <i class="fa-solid fa-ellipsis-vertical grey"></i>
+          </div>
+        </div>
+
+        <div class="notification d-f">
+          <i class="fa-solid fa-bell-slash"></i>
+          <div>
+            <h3>Ricevi notifiche di nuovi messaggi</h3>
+            <span>Attiva notifiche desktop</span>
+          </div>
+        </div>
+
+        <div class="search d-f">
+          <input type="search" id="searchbar" placeholder="Cerca o inizia una nuova chat">
+        </div>
+
+      </div> <!--fine div toolsbar-->
+
+      <div class="msglist">
+
+        <div v-for="contact in contacts" class="contact d-f">
+
+          <img :src="contact.profile" class="profile-image">
+          
+          <div>
+            <h2 class="name">{{ contact.user }}</h2>
+            <span class="lastmsg grey">Ultimo messaggio inviato</span>
+          </div>
+
+          <div class="lasthour">
+            <span class="grey">12.00</span>
+          </div>
+
+        </div>
+
+      </div>
+      
+    </div> <!--fine div leftsidebar-->
+
+
+    <div class="right-sidebar">
+
+      <div class="menu d-f">
+
+          <div v-for="(contact, index) in contacts" class="talking-user d-f">
+            <img :src="contact.profile" v-if="index === 0">
+            <span v-if="index === 0">{{ contact.user }}</span>
+          </div>
+
+        <div class="right-icons d-f">
+          <i class="fa-solid fa-magnifying-glass grey"></i>
+          <i class="fa-solid fa-paperclip grey"></i>
+          <i class="fa-solid fa-ellipsis-vertical grey"></i>
+        </div>
+
+      </div>
+
+      <div class="container-text"></div>
+
+      <div class="container-write d-f">
+        <div class="emote d-f">
+          <i class="fa-regular fa-face-smile"></i>
+        </div>
+        <div class="write d-f">
+          <input type="text" id="message-write" placeholder="Scrivi un messaggio">
+        </div>
+        <div class="mic d-f">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+
+    </div> <!--fine div rightsidebar-->
+
+
+
+
+
+
+
+
+
+
+
+  </div> <!--div app-->
+
+  <script src="js/script.js"></script>
+</body>
+</html>
