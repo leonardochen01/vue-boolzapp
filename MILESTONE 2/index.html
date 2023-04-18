@@ -50,7 +50,7 @@
           <img :src="contact.profile" class="profile-image">
           
           <div>
-            <h2 class="name">{{ contact.user }}</h2>
+            <h2 @click="selectContact(contact)" class="name">{{ contact.user }}</h2>
             <span class="lastmsg grey">Ultimo messaggio inviato</span>
           </div>
 
@@ -69,10 +69,10 @@
 
       <div class="menu d-f">
 
-          <div v-for="(contact, index) in contacts" class="talking-user d-f">
-            <img :src="contact.profile" v-if="index === 0">
-            <span v-if="index === 0">{{ contact.user }}</span>
-          </div>
+        <div v-if="selectedContact" class="d-f talking-user">
+          <img :src="selectedContact.profile">
+          <h2>{{ selectedContact.user }}</h2>
+        </div>
 
         <div class="right-icons d-f">
           <i class="fa-solid fa-magnifying-glass grey"></i>
@@ -82,7 +82,17 @@
 
       </div>
 
-      <div class="container-text"></div>
+      <div class="container-text"> <!--CONTAINER DEL TESTO-->
+
+        <div v-if="selectedContact">
+          <ul>
+            <li v-for="message in selectedContact.messages">
+              <span :class="message.status">{{ message.message }}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
 
       <div class="container-write d-f">
         <div class="emote d-f">
@@ -97,16 +107,6 @@
       </div>
 
     </div> <!--fine div rightsidebar-->
-
-
-
-
-
-
-
-
-
-
 
   </div> <!--div app-->
 

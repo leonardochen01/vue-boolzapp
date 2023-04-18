@@ -174,8 +174,28 @@ const app = createApp({
             }
         ],
         }
-      ]
-      
+      ],
+      selectedContact: null
     }
+  },
+
+  //FUNCTIONS
+
+  methods:{
+
+    toggleVisibility(contact) {
+      contact.visible = !contact.visible;
+    },
+
+    selectContact(contact) {
+      this.selectedContact = contact;
+      this.contacts.forEach(c => {
+        if (c !== contact) {
+          c.visible = false;
+        }
+      });
+    }
+
   }
+
 }).mount('#app')
